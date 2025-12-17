@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import Layout from '../components/Layout';
+import Layout from './components/Layout';
 import { Mail, Phone, MapPin, Send, CheckCircle2, Loader2, Clock } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -171,7 +171,7 @@ const Contact: React.FC = () => {
             </div>
             <div>
               <p className="text-[9px] text-zinc-600 uppercase font-black tracking-[0.3em] mb-2">Direct Line</p>
-              <p className="text-white text-lg font-light hover:text-savvy-blue transition-colors cursor-pointer">217-986-0873</p>
+              <p className="text-white text-lg font-light hover:text-savvy-blue transition-colors cursor-pointer">217-986-0863</p>
             </div>
           </div>
           <div className="flex flex-col gap-6 p-8 bg-zinc-900/30 rounded-3xl border border-white/5">

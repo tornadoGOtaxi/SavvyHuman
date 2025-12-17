@@ -11,7 +11,7 @@ import {
   MessageSquare,
   ChevronRight
 } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import Layout from '../components/Layout';
 
 const Home: React.FC = () => {
@@ -34,232 +34,189 @@ const Home: React.FC = () => {
     {
       icon: <Monitor className="text-savvy-lavender" />,
       title: "Technical Services",
-      desc: "Diagnostics, optimization, cleanup, troubleshooting. We make your devices run like they should have from day one.",
-      features: ["Computer Checkups", "Performance Optimization", "Software Management", "Data Organization"],
-      path: "/services"
+      desc: "Expert diagnostics and software tuning to make your devices run like they should have from day one.",
+      features: ["Computer Checkups", "Security Hardening", "Hardware Overhauls"],
+      path: "/services",
+      color: "group-hover:text-savvy-blue"
     },
     {
       icon: <GraduationCap className="text-savvy-lavender" />,
       title: "Coaching & Training",
-      desc: "Learn to use your own tech with confidence. Personal sessions, family programs, business training.",
-      features: ["1:1 Coaching", "Device Training", "AI Literacy", "Digital Skills"],
-      path: "/coaching"
+      desc: "Learn to use your own tech with confidence through personal sessions and strategic training.",
+      features: ["1:1 Strategy", "Digital Literacy", "AI Empowerment"],
+      path: "/coaching",
+      color: "group-hover:text-savvy-purple"
     },
     {
       icon: <Zap className="text-savvy-lavender" />,
       title: "AI & Automation",
-      desc: "Set up AI tools, build automated workflows, and finally make technology work for you instead of against you.",
-      features: ["AI Tool Setup", "Custom Workflows", "Process Automation", "Script Development"],
-      path: "/ai-automation"
-    }
-  ];
-
-  const testimonials = [
-    {
-      name: "Michael R.",
-      role: "Retired Teacher",
-      text: "I went from 'what's a cloud?' to setting up my own automated backup system. The patience and clarity were incredible.",
-      stars: 5
-    },
-    {
-      name: "Jennifer L.",
-      role: "Freelance Designer",
-      text: "They didn't just clean up my laptop — they showed me why it got slow in the first place. Haven't had an issue since.",
-      stars: 5
-    },
-    {
-      name: "David K.",
-      role: "Real Estate Agent",
-      text: "The AI training session paid for itself in the first week. I'm saving 3 hours a day on email alone.",
-      stars: 5
+      desc: "Build automated workflows and implement AI tools that finally make technology work for you.",
+      features: ["Custom GPTs", "Workflow Audits", "Zapier/Make Setup"],
+      path: "/ai-automation",
+      color: "group-hover:text-savvy-pink"
     }
   ];
 
   return (
     <Layout image={heroImages[bgIndex]}>
-      <div className="space-y-24">
+      <div className="space-y-32">
         {/* Hero Section */}
-        <section className="space-y-8 min-h-[70vh] flex flex-col justify-center">
+        <section className="space-y-12 min-h-[75vh] flex flex-col justify-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
           >
-            <span className="text-savvy-lavender font-bold uppercase tracking-[0.4em] text-[10px] px-4 py-1.5 bg-savvy-lavender/10 rounded-full border border-savvy-lavender/20 inline-flex items-center gap-2">
-              <Zap size={10} /> Tech help that actually helps
+            <span className="text-savvy-lavender font-bold uppercase tracking-[0.5em] text-[11px] px-5 py-2 bg-savvy-lavender/10 rounded-full border border-savvy-lavender/20 inline-flex items-center gap-3">
+              <span className="w-1.5 h-1.5 rounded-full bg-savvy-blue animate-pulse" />
+              Technology, Made Simple.
             </span>
           </motion.div>
           
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-white leading-[1.1]">
-            Fast. Clean. <br />
-            <span className="text-savvy-purple">Human-friendly</span> <br />
-            tech support.
-          </h1>
+          <div className="space-y-6">
+            <h1 className="text-6xl md:text-8xl font-black tracking-tighter text-white leading-[0.9] uppercase italic font-serif">
+              Fast. Clean. <br />
+              <span className="text-savvy-purple not-italic font-sans tracking-tight">Human</span>-Friendly <br />
+              Tech.
+            </h1>
+            
+            <p className="text-zinc-500 text-xl md:text-2xl max-w-xl leading-relaxed font-light">
+              We fix your tech, optimize your workflow, and teach you to actually understand it. 
+              <span className="text-white font-medium italic"> No jargon. No judgment.</span>
+            </p>
+          </div>
           
-          <p className="text-zinc-400 text-lg md:text-xl max-w-lg leading-relaxed font-light">
-            We fix your tech, optimize your workflow, and teach you to actually understand it. 
-            <span className="text-savvy-pink font-medium italic"> No jargon. No judgment. Just solutions.</span>
-          </p>
-          
-          <div className="pt-4 flex flex-wrap gap-4">
+          <div className="flex flex-wrap gap-6">
             <NavLink 
               to="/contact" 
-              className="bg-savvy-blue hover:bg-savvy-purple text-white px-8 py-4 rounded-xl font-bold text-sm transition-all shadow-xl shadow-savvy-blue/20 flex items-center gap-2"
+              className="bg-white text-black px-10 py-5 rounded-2xl font-black text-[11px] uppercase tracking-[0.3em] transition-all hover:bg-savvy-blue hover:text-white shadow-2xl shadow-white/5 flex items-center gap-3"
             >
-              Book a Tech Tune-Up <ArrowUpRight size={16} />
+              Book a Session <ArrowUpRight size={18} />
             </NavLink>
             <NavLink 
-              to="/coaching" 
-              className="bg-transparent border border-white/20 hover:border-savvy-pink text-white px-8 py-4 rounded-xl font-bold text-sm transition-all"
+              to="/services" 
+              className="bg-transparent border border-white/10 text-white px-10 py-5 rounded-2xl font-black text-[11px] uppercase tracking-[0.3em] transition-all hover:border-white hover:bg-white/5"
             >
-              Explore Training Sessions
+              Our Services
             </NavLink>
-          </div>
-
-          <div className="pt-8 flex flex-wrap gap-3">
-            <span className="text-[10px] text-zinc-500 uppercase tracking-widest font-bold border border-white/5 px-3 py-1 rounded-full">🔧 Tech Services</span>
-            <span className="text-[10px] text-zinc-500 uppercase tracking-widest font-bold border border-white/5 px-3 py-1 rounded-full">🎓 Coaching & Training</span>
-            <span className="text-[10px] text-zinc-500 uppercase tracking-widest font-bold border border-white/5 px-3 py-1 rounded-full">✨ AI & Automation</span>
           </div>
         </section>
 
-        {/* Three ways to get savvy */}
-        <section className="space-y-12">
-          <div className="text-center space-y-4">
-            <span className="text-savvy-purple font-bold uppercase tracking-[0.5em] text-[9px]">WHAT WE DO</span>
-            <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight">Three ways to get savvy</h2>
-            <p className="text-zinc-500 text-sm max-w-md mx-auto">Whether you need a fix, want to learn, or dream of automation — we've got you covered.</p>
+        {/* Feature Grid */}
+        <section className="space-y-20">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
+            <div className="space-y-4">
+              <span className="text-savvy-purple font-bold uppercase tracking-[0.6em] text-[10px]">EXPERTISE</span>
+              <h2 className="text-4xl md:text-6xl font-serif italic text-white tracking-tight">Three ways to get savvy.</h2>
+            </div>
+            <p className="text-zinc-500 text-sm max-w-xs font-light leading-relaxed">
+              Strategic support designed to move you from frustration to digital mastery.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {waysToGetSavvy.map((item, idx) => (
               <motion.div 
                 key={idx}
-                whileHover={{ y: -5 }}
-                className="group p-8 bg-zinc-900 border border-white/5 rounded-3xl hover:border-savvy-purple/30 transition-all"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1 }}
+                className="group p-10 bg-zinc-900/40 border border-white/5 rounded-[2.5rem] hover:border-white/20 hover:bg-zinc-900 transition-all duration-700 flex flex-col justify-between"
               >
-                <div className="flex flex-col md:flex-row md:items-start gap-8">
-                  <div className="w-14 h-14 shrink-0 bg-white/5 rounded-2xl flex items-center justify-center border border-white/5 group-hover:bg-savvy-deep transition-all duration-500">
-                    {item.icon}
+                <div className="space-y-8">
+                  <div className="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center border border-white/10 group-hover:bg-savvy-blue transition-all duration-700">
+                    <div className="text-zinc-400 group-hover:text-white group-hover:scale-110 transition-all duration-700">
+                      {item.icon}
+                    </div>
                   </div>
-                  <div className="flex-1 space-y-4">
-                    <h3 className="text-xl font-bold text-white">{item.title}</h3>
-                    <p className="text-zinc-400 text-sm leading-relaxed">{item.desc}</p>
-                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-2 pt-2">
-                      {item.features.map((f, i) => (
-                        <li key={i} className="flex items-center gap-2 text-[11px] text-zinc-500 uppercase tracking-wider">
-                          <div className="w-1.5 h-1.5 rounded-full bg-savvy-blue"></div>
-                          {f}
-                        </li>
-                      ))}
-                    </ul>
-                    <NavLink to={item.path} className="inline-flex items-center gap-2 text-savvy-lavender hover:text-white text-xs font-bold uppercase tracking-widest pt-4 group">
-                      Learn more <ChevronRight size={14} className="group-hover:translate-x-1 transition-transform" />
-                    </NavLink>
+                  <div className="space-y-4">
+                    <h3 className={`text-2xl font-bold text-white transition-colors ${item.color}`}>{item.title}</h3>
+                    <p className="text-zinc-500 text-sm leading-relaxed font-light">{item.desc}</p>
                   </div>
+                  <ul className="space-y-3 pt-4 border-t border-white/5">
+                    {item.features.map((f, i) => (
+                      <li key={i} className="flex items-center gap-3 text-[10px] text-zinc-400 uppercase tracking-widest font-black">
+                        <span className="w-1.5 h-1.5 rounded-full bg-savvy-purple/30 group-hover:bg-savvy-purple transition-all" />
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
+                <NavLink to={item.path} className="mt-12 inline-flex items-center gap-3 text-white text-[10px] font-black uppercase tracking-[0.4em] group/link">
+                  Explore <ChevronRight size={14} className="group-hover/link:translate-x-2 transition-transform" />
+                </NavLink>
               </motion.div>
             ))}
           </div>
         </section>
 
-        {/* Our Philosophy Section */}
-        <section className="relative overflow-hidden bg-savvy-deep rounded-[2.5rem] p-8 md:p-16">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-savvy-pink/20 blur-[100px] rounded-full -translate-y-1/2 translate-x-1/2"></div>
-          <div className="space-y-8 relative z-10">
-            <span className="text-white/60 font-bold uppercase tracking-[0.5em] text-[9px]">OUR PHILOSOPHY</span>
-            <h2 className="text-4xl md:text-6xl font-bold text-white leading-tight">
-              We don't just fix it. <br />
-              <span className="opacity-50 italic text-savvy-pink">We teach it.</span>
-            </h2>
-            <p className="text-savvy-lavender text-lg max-w-xl font-light leading-relaxed">
-              Most tech support leaves you right where you started — waiting for the next thing to break. 
-              We believe you should understand your technology, not fear it. That's why coaching is core to everything we do.
-            </p>
-            <div className="space-y-4 pt-4">
-              {[
-                "You shouldn't need a PhD to use your own laptop",
-                "AI tools are only useful if you actually know how to use them",
-                "The best tech support makes itself unnecessary",
-                "Understanding beats dependency every time"
-              ].map((text, i) => (
-                <div key={i} className="flex items-center gap-3 text-white/80 font-medium text-sm">
-                  <CheckCircle2 size={18} className="text-savvy-lavender" />
-                  {text}
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-12 p-8 bg-white/10 backdrop-blur-md rounded-2xl border border-white/10 max-w-md">
-              <MessageSquare className="text-savvy-pink mb-4" size={24} />
-              <p className="text-white font-serif italic text-lg leading-relaxed mb-6">
-                "After one session, I actually understood what all those icons meant. Now I fix half the problems myself."
-              </p>
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-savvy-blue/50 flex items-center justify-center font-bold text-white">SM</div>
-                <div>
-                  <p className="text-white font-bold text-sm">Sarah M.</p>
-                  <p className="text-white/60 text-[10px] uppercase tracking-widest font-bold">Small Business Owner</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Testimonials */}
-        <section className="space-y-12">
-          <div className="text-center space-y-4">
-            <span className="text-savvy-purple font-bold uppercase tracking-[0.5em] text-[9px]">TESTIMONIALS</span>
-            <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight">People seem to like us</h2>
-            <p className="text-zinc-500 text-sm max-w-md mx-auto">Don't take our word for it. Here's what our clients have to say.</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {testimonials.map((t, idx) => (
-              <div key={idx} className="p-8 bg-zinc-900/50 border border-white/5 rounded-3xl flex flex-col justify-between h-full">
-                <div className="space-y-6">
-                  <div className="flex gap-1">
-                    {[...Array(t.stars)].map((_, i) => <Star key={i} size={14} className="fill-savvy-purple text-savvy-purple" />)}
+        {/* Philosophy Block */}
+        <section className="relative overflow-hidden bg-zinc-900 border border-white/5 rounded-[3rem] p-12 md:p-24 group">
+          <div className="absolute -top-24 -right-24 w-96 h-96 bg-savvy-blue/10 blur-[120px] rounded-full group-hover:bg-savvy-blue/20 transition-all duration-1000"></div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 relative z-10">
+            <div className="space-y-12">
+              <span className="text-savvy-pink font-bold uppercase tracking-[0.6em] text-[10px]">MANIFESTO</span>
+              <h2 className="text-5xl md:text-7xl font-serif italic text-white leading-[1.1] tracking-tighter">
+                We don't just fix it. <br />
+                <span className="text-zinc-600 not-serif font-sans uppercase font-black text-4xl md:text-5xl">We teach it.</span>
+              </h2>
+              <div className="space-y-6 pt-8 border-t border-white/5">
+                {[
+                  "No Technical Jargon",
+                  "Radical Transparency",
+                  "Empowerment Over Dependency"
+                ].map((text, i) => (
+                  <div key={i} className="flex items-center gap-5 text-white/90 font-bold text-xs uppercase tracking-[0.3em]">
+                    <div className="w-10 h-10 rounded-xl bg-savvy-blue/20 flex items-center justify-center text-savvy-blue">
+                      <CheckCircle2 size={20} />
+                    </div>
+                    {text}
                   </div>
-                  <p className="text-zinc-300 text-sm leading-relaxed font-light italic">"{t.text}"</p>
-                </div>
-                <div className="pt-8 border-t border-white/5 mt-8">
-                  <p className="text-white font-bold text-sm">{t.name}</p>
-                  <p className="text-zinc-500 text-[10px] uppercase tracking-widest font-bold">{t.role}</p>
+                ))}
+              </div>
+            </div>
+            <div className="flex flex-col justify-end space-y-8">
+              <div className="p-10 bg-white/5 backdrop-blur-xl rounded-3xl border border-white/10 relative">
+                <MessageSquare className="text-savvy-pink absolute top-10 right-10 opacity-20" size={48} />
+                <p className="text-white font-serif italic text-2xl leading-relaxed mb-8 relative z-10">
+                  "Most tech support leaves you waiting for the next thing to break. Savvy IT showed me how to prevent it."
+                </p>
+                <div className="flex items-center gap-5">
+                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-savvy-blue to-savvy-purple flex items-center justify-center font-black text-white text-xl">SM</div>
+                  <div>
+                    <p className="text-white font-black uppercase tracking-widest text-[11px]">Sarah Mitchell</p>
+                    <p className="text-zinc-500 text-[9px] uppercase tracking-[0.4em] font-black mt-1">Creative Director</p>
+                  </div>
                 </div>
               </div>
-            ))}
+            </div>
           </div>
         </section>
 
-        {/* Final CTA Section */}
-        <section className="text-center space-y-8 py-20 relative overflow-hidden rounded-[2.5rem] bg-zinc-900 border border-white/5">
-           <div className="absolute inset-0 opacity-[0.05] pointer-events-none" 
-                 style={{ backgroundImage: 'radial-gradient(#fff 1px, transparent 1px)', backgroundSize: '30px 30px' }}></div>
-          <span className="relative z-10 text-savvy-lavender font-bold uppercase tracking-[0.5em] text-[9px] px-3 py-1 bg-savvy-lavender/10 rounded-full">READY TO GET STARTED?</span>
-          <h2 className="relative z-10 text-4xl md:text-6xl font-bold text-white tracking-tighter">
-            Let's make your tech <br />
-            <span className="text-savvy-blue italic">actually work for you.</span>
+        {/* Final CTA */}
+        <section className="text-center space-y-12 py-32 border-t border-white/5">
+          <h2 className="text-5xl md:text-8xl font-serif italic text-white tracking-tighter leading-none">
+            Ready to get <br />
+            <span className="text-savvy-blue">savvy?</span>
           </h2>
-          <p className="relative z-10 text-zinc-500 text-lg max-w-xl mx-auto font-light">
-            Whether you need a quick fix or a full training program, we're here to help. <br className="hidden md:block" />
-            No sales pitch. Just solutions.
+          <p className="text-zinc-500 text-lg md:text-xl max-w-lg mx-auto font-light">
+            No long-term contracts. No hidden fees. Just expert help when you need it most.
           </p>
-          <div className="relative z-10 flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-8">
             <NavLink 
               to="/contact" 
-              className="w-full sm:w-auto bg-savvy-blue hover:bg-savvy-purple text-white px-10 py-5 rounded-2xl font-black text-[10px] uppercase tracking-[0.3em] transition-all"
+              className="w-full sm:w-auto bg-white text-black px-12 py-6 rounded-2xl font-black text-[12px] uppercase tracking-[0.4em] hover:bg-savvy-blue hover:text-white transition-all shadow-2xl"
             >
-              Schedule a Session
+              Book Your Session
             </NavLink>
             <NavLink 
-              to="/contact" 
-              className="w-full sm:w-auto bg-transparent border border-white/10 hover:border-savvy-pink text-white px-10 py-5 rounded-2xl font-black text-[10px] uppercase tracking-[0.3em] transition-all flex items-center justify-center gap-2"
+              to="/about" 
+              className="w-full sm:w-auto bg-transparent border border-white/10 text-white px-12 py-6 rounded-2xl font-black text-[12px] uppercase tracking-[0.4em] hover:border-white transition-all"
             >
-              <MessageSquare size={14} /> Ask a Question
+              The Manifesto
             </NavLink>
           </div>
-          <p className="relative z-10 text-zinc-600 text-[10px] uppercase tracking-widest font-bold">Response time: Usually within a few hours. We're real humans.</p>
         </section>
       </div>
     </Layout>
