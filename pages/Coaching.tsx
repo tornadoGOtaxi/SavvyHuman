@@ -12,22 +12,22 @@ const Coaching: React.FC = () => {
   ];
 
   return (
-    <Layout image="https://picsum.photos/id/64/1200/1600">
-      <div className="space-y-12">
+    <Layout image="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=1200&h=1600">
+      <div className="space-y-12 pb-20">
         <header>
-          <span className="text-indigo-400 font-bold uppercase tracking-[0.4em] text-[10px] block mb-4">DIGITAL EMPOWERMENT</span>
+          <span className="text-savvy-lavender font-bold uppercase tracking-[0.4em] text-[10px] block mb-4">DIGITAL EMPOWERMENT</span>
           <h2 className="text-4xl md:text-5xl font-serif italic text-white mb-6">Don't just use tech. <br />Master it.</h2>
           <p className="text-zinc-500 text-sm max-w-md">Our coaching isn't about teaching you to code—it's about teaching you to think like a digital strategist.</p>
         </header>
 
         <div className="grid grid-cols-1 gap-6">
           {pillars.map((p, i) => (
-            <div key={i} className="flex gap-6 items-start p-6 bg-zinc-900 border border-white/5 rounded-2xl hover:border-indigo-500/40 transition-all group">
-              <div className="w-12 h-12 flex-shrink-0 bg-indigo-500/10 rounded-xl flex items-center justify-center text-indigo-400 group-hover:bg-indigo-500 group-hover:text-white transition-all">
+            <div key={i} className="flex gap-6 items-start p-6 bg-zinc-900 border border-white/5 rounded-2xl hover:border-savvy-purple/40 transition-all group">
+              <div className="w-12 h-12 flex-shrink-0 bg-savvy-blue/10 rounded-xl flex items-center justify-center text-savvy-blue group-hover:bg-savvy-blue group-hover:text-white transition-all duration-500">
                 {p.icon}
               </div>
               <div>
-                <h3 className="text-white font-bold text-base uppercase tracking-widest mb-2">{p.title}</h3>
+                <h3 className="text-white font-bold text-base uppercase tracking-widest mb-2 group-hover:text-savvy-blue transition-colors">{p.title}</h3>
                 <p className="text-zinc-500 text-sm leading-relaxed">{p.desc}</p>
               </div>
             </div>
@@ -35,7 +35,7 @@ const Coaching: React.FC = () => {
         </div>
 
         <div className="pt-8">
-          <button className="w-full md:w-auto px-8 py-4 bg-white text-black font-bold uppercase tracking-widest text-xs rounded-full hover:bg-zinc-200 transition-all">
+          <button className="w-full md:w-auto px-10 py-4 bg-white text-black font-bold uppercase tracking-widest text-[10px] rounded-full hover:bg-savvy-lavender transition-all">
             Inquire About Coaching Spots
           </button>
         </div>

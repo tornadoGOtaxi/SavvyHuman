@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import Layout from '../components/Layout';
-import { Mail, Phone, MapPin, Send, CheckCircle2, Loader2, Clock, ChevronDown } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, CheckCircle2, Loader2, Clock } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Contact: React.FC = () => {
@@ -120,20 +120,17 @@ const Contact: React.FC = () => {
                 
                 <div className="group relative">
                   <label className="absolute -top-6 left-0 text-[9px] font-black uppercase tracking-[0.3em] text-zinc-600 group-focus-within:text-savvy-blue transition-colors">Service Interest</label>
-                  <div className="relative">
-                    <select 
-                      name="subject"
-                      value={formData.subject}
-                      onChange={handleChange}
-                      className="w-full bg-transparent border-b border-white/10 py-4 text-white font-light focus:outline-none focus:border-savvy-blue transition-all appearance-none cursor-pointer pr-10"
-                    >
-                      <option className="bg-zinc-950 text-white" value="general">Book a Tech Tune-Up</option>
-                      <option className="bg-zinc-950 text-white" value="coaching">Training & Coaching Sessions</option>
-                      <option className="bg-zinc-950 text-white" value="ai">AI & Automation Audit</option>
-                      <option className="bg-zinc-950 text-white" value="question">Ask a Quick Question</option>
-                    </select>
-                    <ChevronDown size={16} className="absolute right-0 top-1/2 -translate-y-1/2 text-zinc-500 pointer-events-none group-focus-within:text-savvy-blue transition-colors" />
-                  </div>
+                  <select 
+                    name="subject"
+                    value={formData.subject}
+                    onChange={handleChange}
+                    className="w-full bg-transparent border-b border-white/10 py-4 text-white font-light focus:outline-none focus:border-savvy-blue transition-all appearance-none cursor-pointer"
+                  >
+                    <option className="bg-zinc-950 text-white" value="general">Book a Tech Tune-Up</option>
+                    <option className="bg-zinc-950 text-white" value="coaching">Training & Coaching Sessions</option>
+                    <option className="bg-zinc-950 text-white" value="ai">AI & Automation Audit</option>
+                    <option className="bg-zinc-950 text-white" value="question">Ask a Quick Question</option>
+                  </select>
                 </div>
 
                 <div className="group relative">
@@ -168,24 +165,24 @@ const Contact: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 pt-16 border-t border-white/5">
-          <a href="tel:217-986-0863" className="flex flex-col gap-6 p-8 bg-zinc-900/30 rounded-3xl border border-white/5 group hover:border-savvy-purple/30 transition-all">
-            <div className="w-12 h-12 bg-savvy-purple/10 rounded-2xl flex items-center justify-center text-savvy-purple border border-savvy-purple/10 group-hover:bg-savvy-purple group-hover:text-white transition-all">
+          <div className="flex flex-col gap-6 p-8 bg-zinc-900/30 rounded-3xl border border-white/5">
+            <div className="w-12 h-12 bg-savvy-purple/10 rounded-2xl flex items-center justify-center text-savvy-purple border border-savvy-purple/10">
               <Phone size={20} />
             </div>
             <div>
               <p className="text-[9px] text-zinc-600 uppercase font-black tracking-[0.3em] mb-2">Direct Line</p>
-              <p className="text-white text-lg font-light group-hover:text-savvy-blue transition-colors">217-986-0863</p>
+              <p className="text-white text-lg font-light hover:text-savvy-blue transition-colors cursor-pointer">217-986-0873</p>
             </div>
-          </a>
-          <a href="mailto:renee.i@Savvyhuman.tech" className="flex flex-col gap-6 p-8 bg-zinc-900/30 rounded-3xl border border-white/5 group hover:border-savvy-purple/30 transition-all">
-            <div className="w-12 h-12 bg-savvy-purple/10 rounded-2xl flex items-center justify-center text-savvy-purple border border-savvy-purple/10 group-hover:bg-savvy-purple group-hover:text-white transition-all">
+          </div>
+          <div className="flex flex-col gap-6 p-8 bg-zinc-900/30 rounded-3xl border border-white/5">
+            <div className="w-12 h-12 bg-savvy-purple/10 rounded-2xl flex items-center justify-center text-savvy-purple border border-savvy-purple/10">
               <Mail size={20} />
             </div>
             <div>
               <p className="text-[9px] text-zinc-600 uppercase font-black tracking-[0.3em] mb-2">Electronic Mail</p>
-              <p className="text-white text-lg font-light group-hover:text-savvy-blue transition-colors break-all">renee.i@Savvyhuman.tech</p>
+              <p className="text-white text-lg font-light hover:text-savvy-blue transition-colors cursor-pointer break-all">renee.i@Savvyhuman.tech</p>
             </div>
-          </a>
+          </div>
           <div className="flex flex-col gap-6 p-8 bg-zinc-900/30 rounded-3xl border border-white/5">
             <div className="w-12 h-12 bg-savvy-purple/10 rounded-2xl flex items-center justify-center text-savvy-purple border border-savvy-purple/10">
               <MapPin size={20} />
